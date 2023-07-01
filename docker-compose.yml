@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    depends_on:
+      - zookeeper
+    ports:
+      # internal port for other containers -> kafka:29092
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:29092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+
+  jobmanager:
+    image: flink:1.17.1-scala_2.12
+    container_name: jobmanager
+    command: jobmanager
+    ports:
+      - "8081:8081"   # Flink Web UI
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+    volumes:
+      # this is the key: mount your built JAR into Flink's usrlib
+      - ./flink-job/target:/opt/flink/usrlib
+
+  taskmanager:
+    image: flink:1.17.1-scala_2.12
+    container_name: taskmanager
+    depends_on:
+      - jobmanager
+    command: taskmanager
+    environment:
+      - |
+        FLINK_PROPERTIES=
+        jobmanager.rpc.address: jobmanager
+        taskmanager.numberOfTaskSlots: 2

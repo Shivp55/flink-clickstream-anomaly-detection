@@ -20,3 +20,4 @@
 2023-08-20T10:00:00  -  Add troubleshooting notes for Kafka + Flink
 2023-08-27T10:00:00  -  Finalize project documentation
 - [2023-07-01 10:00:00] Created initial Maven module and basic folder structure for the Flink clickstream anomaly detection pipeline.
+- [2023-07-03 11:30:00] Introduced ClickstreamAnomalyJob with main entrypoint, basic stream environment setup, and placeholder topology.

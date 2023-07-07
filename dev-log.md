@@ -22,3 +22,4 @@
 - [2023-07-01 10:00:00] Created initial Maven module and basic folder structure for the Flink clickstream anomaly detection pipeline.
 - [2023-07-03 11:30:00] Introduced ClickstreamAnomalyJob with main entrypoint, basic stream environment setup, and placeholder topology.
 - [2023-07-06 09:45:00] Wired FlinkKafkaConsumer with custom JsonDeserializationSchema to read clickstream events from Kafka.
+- [2023-07-07 16:20:00] Implemented tumbling processing-time windows and simple anomaly detection based on event volume thresholds.

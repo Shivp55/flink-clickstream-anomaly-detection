@@ -23,3 +23,4 @@
 - [2023-07-03 11:30:00] Introduced ClickstreamAnomalyJob with main entrypoint, basic stream environment setup, and placeholder topology.
 - [2023-07-06 09:45:00] Wired FlinkKafkaConsumer with custom JsonDeserializationSchema to read clickstream events from Kafka.
 - [2023-07-07 16:20:00] Implemented tumbling processing-time windows and simple anomaly detection based on event volume thresholds.
+- [2023-07-09 14:10:00] Documented the approach for generating synthetic clickstream events for local dev and testing.

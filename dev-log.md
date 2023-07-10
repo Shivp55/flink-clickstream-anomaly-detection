@@ -24,3 +24,4 @@
 - [2023-07-06 09:45:00] Wired FlinkKafkaConsumer with custom JsonDeserializationSchema to read clickstream events from Kafka.
 - [2023-07-07 16:20:00] Implemented tumbling processing-time windows and simple anomaly detection based on event volume thresholds.
 - [2023-07-09 14:10:00] Documented the approach for generating synthetic clickstream events for local dev and testing.
+- [2023-07-10 13:00:00] Created docker-compose.yml with Kafka, Zookeeper, Flink JobManager, and TaskManager for local end-to-end runs.

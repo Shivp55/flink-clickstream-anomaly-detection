@@ -26,3 +26,4 @@
 - [2023-07-09 14:10:00] Documented the approach for generating synthetic clickstream events for local dev and testing.
 - [2023-07-10 13:00:00] Created docker-compose.yml with Kafka, Zookeeper, Flink JobManager, and TaskManager for local end-to-end runs.
 - [2023-07-11 18:05:00] Standardized log messages around anomaly detection, window results, and Kafka offsets for easier debugging.
+- [2023-07-11 19:55:00] Documented docker exec commands for copying the JAR to JobManager and submitting the Flink job.

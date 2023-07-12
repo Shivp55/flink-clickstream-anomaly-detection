@@ -28,3 +28,4 @@
 - [2023-07-11 18:05:00] Standardized log messages around anomaly detection, window results, and Kafka offsets for easier debugging.
 - [2023-07-11 19:55:00] Documented docker exec commands for copying the JAR to JobManager and submitting the Flink job.
 - [2023-07-12 09:15:00] Captured step-by-step instructions for building the JAR, starting Docker services, and running the pipeline.
+- [2023-07-12 15:40:00] Tuned window sizes and anomaly thresholds based on test runs to reduce noise and highlight meaningful spikes.

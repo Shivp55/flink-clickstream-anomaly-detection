@@ -30,3 +30,4 @@
 - [2023-07-12 09:15:00] Captured step-by-step instructions for building the JAR, starting Docker services, and running the pipeline.
 - [2023-07-12 15:40:00] Tuned window sizes and anomaly thresholds based on test runs to reduce noise and highlight meaningful spikes.
 - [2023-07-13 10:25:00] Improved console output formatting for anomalies to make it easier to skim logs during debugging.
+- [2023-07-14 16:45:00] Cleaned up dev notes, updated documentation, and confirmed the end-to-end pipeline runs reliably in Docker.
